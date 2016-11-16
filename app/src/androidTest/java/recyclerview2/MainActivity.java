@@ -1,4 +1,4 @@
-package recyclerview1;
+package recyclerview2;
 
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -42,15 +42,6 @@ public class MainActivity extends AppCompatActivity {
         String[] arDeskripsi = resources.getStringArray(R.array.place_desc);
         TypedArray a = resources.obtainTypedArray(R.array.places_picture);
         Drawable[] arFoto = new Drawable[a.length()];
-
-        for (int i = 0; i < arFoto.length; i++) {
-            BitmapDrawable bd = (BitmapDrawable) a.getDrawable(i);
-            RoundedBitmapDrawable rbd =
-                    RoundedBitmapDrawableFactory.create(getResources(), bd.getBitmap());
-            rbd.setCircular(true);
-            arFoto[i] = rbd;
-        }
-        a.recycle();
 
         for (int i = 0; i < arFoto.length; i++) {
             BitmapDrawable bd = (BitmapDrawable) a.getDrawable(i);
