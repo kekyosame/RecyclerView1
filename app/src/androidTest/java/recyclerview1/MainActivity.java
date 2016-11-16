@@ -52,6 +52,15 @@ public class MainActivity extends AppCompatActivity {
         }
         a.recycle();
 
+        for (int i = 0; i < arFoto.length; i++) {
+            BitmapDrawable bd = (BitmapDrawable) a.getDrawable(i);
+            RoundedBitmapDrawable rbd =
+                    RoundedBitmapDrawableFactory.create(getResources(), bd.getBitmap());
+            rbd.setCircular(true);
+            arFoto[i] = rbd;
+        }
+        a.recycle();
+
         for (int i = 0; i < arJudul.length; i++) {
             mList.add(new Hotel(arJudul[i], arDeskripsi[i], arFoto[i]));
         }
